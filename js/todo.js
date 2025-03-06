@@ -13,7 +13,13 @@ function renderTodo() {
   // Проходимся по всем элементам массива и создаем html для каждой задачи
   for (let i = 0; i < todoList.length; i++) {
     const todo = todoList[i];
-    const html = `<p>${todo}</p>`;
+    const html = 
+    `<p>${todo}
+     <button onclick="
+     todoList.splice(${i}, 1);
+     renderTodo();
+     ">Delete</button></p>`; // удалям 1 значение из списка и обновляем список с помощью функции renderTodo()
+     
     todoListHTML += html;
   }
     console.log(todoListHTML);
