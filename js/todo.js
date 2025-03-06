@@ -1,7 +1,26 @@
 'use strict';
 
 // 1.Создаем массив для хранения наших задач
-const todoList = [];
+const todoList = ['Купить еду','Посмотреть фильм'];
+
+// Отображаем список на странице
+renderTodo();
+
+function renderTodo() {
+
+  let todoListHTML = '';
+  
+  // Проходимся по всем элементам массива и создаем html для каждой задачи
+  for (let i = 0; i < todoList.length; i++) {
+    const todo = todoList[i];
+    const html = `<p>${todo}</p>`;
+    todoListHTML += html;
+  }
+    console.log(todoListHTML);
+  
+  document.querySelector('.js-todo').innerHTML = todoListHTML;
+}
+
 
 // 2.При нажатии кнопки добавит , получаем значение из поля ввода и добавляем его в наш массив
 function addTodo() {
@@ -11,7 +30,9 @@ function addTodo() {
 
   // 3. Выводим на консоль
   console.log(todoList);
-  
+
   // Очищаем поле после  ввода текста
   inputElement.value = '';
+  // Отображаем список на странице
+  renderTodo();
 }
