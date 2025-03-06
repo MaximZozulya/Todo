@@ -1,13 +1,7 @@
 'use strict';
 
 // 1.Создаем массив для хранения наших задач
-const todoList = [{
-  name: 'Купить еду',
-  dueDate: '2025-03-06'
-},{
-  name: 'Посмотреть фильм',
-  dueDate: '2025-03-06'
-}];
+const todoList = [];
 
 // Отображаем список на странице
 renderTodo();
@@ -20,11 +14,12 @@ function renderTodo() {
     const todoObject = todoList[i];
     const {name, dueDate} = todoObject;
     const html = 
-    `<p>${name} ${dueDate}
-     <button onclick="
+    `<div class="todo-task">${name}</div> 
+     <div class="todo-date">${dueDate}</div>
+     <button class="delete-button" onclick="
      todoList.splice(${i}, 1);
      renderTodo();
-     ">Delete</button></p>`; // удалям 1 значение из списка и обновляем список с помощью функции renderTodo()
+     ">Delete</button>`; // удалям 1 значение из списка и обновляем список с помощью функции renderTodo()
     todoListHTML += html;
   }  
   document.querySelector('.js-todo').innerHTML = todoListHTML;

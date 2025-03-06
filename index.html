@@ -8,11 +8,17 @@
   </head>
   <body>
     <h1>Todo list</h1>
-    <input class="js-input" placeholder="Название задачи">
-    <input class="js-date" type="date">
-    <button onclick="addTodo();">Добавить задачу</button>
+    <fieldset>
+      <legend>Список задач</legend>
+      <div class="input-grid">
+        <input class="js-input todo-input" placeholder="Название задачи">
+        <input class="js-date date-input" type="date">
+        <button class="add-button" onclick="addTodo();">Добавить</button>
+      </div>
+  
+      <div class="js-todo todo-grid"></div>
 
-    <div class="js-todo"></div>
+    </fieldset>
 
 
     <script src="js/todo.js"></script>
